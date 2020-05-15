@@ -18,7 +18,7 @@
 			echo "Database created successfully";
 		} 
 
-		$sqlDB="CREATE table servicos (servico VARCHAR(255), login vARCHAR(255), senha vARCHAR(255), id INT PRIMARY KEY)";
+		$sqlDB="CREATE table servicos (servico VARCHAR(255), login vARCHAR(255), senha vARCHAR(255), id INT PRIMARY KEY AUTO_INCREMENT)";
 		if($conn->query($sqlDB) === TRUE){
 			echo "Table created successfully";
 		} 
