@@ -12,11 +12,17 @@
 		if($conn->connect_error)
 			die("Conexão falhou." . $conn->connect_error);
 		
-		//checar se banco existe
-		$exist="SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'teste'";
-		if(!$exist)
-			$exist="CREATE DATABASE IF NOT EXISTS <teste>";
-			$q=mysqli_query($conn, $exist);
+		//checar se banco e tabela existem. Senão, criar.
+		$sql="CREATE DATABASE teste";
+		if($conn->query($sql) === TRUE){
+			echo "Database created successfully";
+		} 
 
-			//checar essa validação (criou a tabela, mas e o banco?)
+		$sqlDB="CREATE table servicos (servico VARCHAR(255), login vARCHAR(255), senha vARCHAR(255), id INT PRIMARY KEY)";
+		if($conn->query($sqlDB) === TRUE){
+			echo "Table created successfully";
+		} 
+
+		$conn->close();
+?>
 
