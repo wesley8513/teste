@@ -5,10 +5,6 @@ include('conn.php');
 
 	$sql="SELECT * FROM servicos WHERE servico = '$servico'";
 	$result=mysqli_query($conn, $sql);
-
-
-
-//echo var_dump($result);
 	
 
 		while($row =mysqli_fetch_assoc($result)){
@@ -16,14 +12,14 @@ include('conn.php');
 			$login= $row['login'];
 			$senha= $row['senha'];
 
-			echo $servico;
-			echo $login;
-			echo $senha;
+			echo "Serviço: ".$servico."<br />";
+			echo "Login: ".$login."<br />";
+			echo "Senha: ".$senha."<br />";
 		}
 
 
 
-	//não funciona corrigir
+	//adicionar validação para nome exato
 
 
 
