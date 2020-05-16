@@ -1,20 +1,27 @@
 <?php
-include 'conn.php';
+include('conn.php');
+
+	$servico = $_POST['servico'];
+
+	$sql="SELECT * FROM servicos WHERE servico = '$servico'";
+	$result=mysqli_query($conn, $sql);
 
 
 
+//echo var_dump($result);
 	
 
-	$res=mysqli_query($conn, " select * from servicos where '$_POST[servico]'");
-	$result=mysqli_result($res);
+		while($row =mysqli_fetch_assoc($result)){
+			$servico = $row['servico'];
+			$login= $row['login'];
+			$senha= $row['senha'];
+
+			echo $servico;
+			echo $login;
+			echo $senha;
+		}
 
 
-	while($rows=mysqli_fetch_assoc($result)){
-		echo "Serviço: ".$rows["servico"]."<br />";
-		echo "Login: ".$rows["login"]."<br />";
-		echo "Senha: ".$rows["Senha"]."<br />";
-		
-	}
 
 	//não funciona corrigir
 
