@@ -12,3 +12,13 @@ $senha= $_POST['senha'];
 //continuar...
 	if($res)
 		echo "Cadastro realizado com sucesso!";
+
+?>
+
+<html>
+	<body>
+		<br>
+		<br>
+		<a href="cadastro.html">Voltar</a>
+	</body>
+</html>

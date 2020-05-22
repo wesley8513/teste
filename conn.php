@@ -23,6 +23,6 @@
 			echo "Table created successfully";
 		} 
 
-		//$conn->close();
+		
 ?>
 
