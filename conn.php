@@ -5,14 +5,14 @@
 	$pass = "";
 	$dbname ="teste";
 
-		//cria conexão
+		//Creates a new connection.
 		$conn = new mysqli($servername, $user, $pass, $dbname);
 
-		//checar
+		//Checks it...
 		if($conn->connect_error)
 			die("Conexão falhou." . $conn->connect_error);
 		
-		//checar se banco e tabela existem. Senão, criar.
+		//If there's no database and table, create them...
 		$sql="CREATE DATABASE teste";
 		if($conn->query($sql) === TRUE){
 			echo "Database created successfully";

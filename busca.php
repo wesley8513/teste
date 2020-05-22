@@ -3,6 +3,7 @@ include('conn.php');
 
 	$servico = $_POST['servico'];
 
+	//fetching by a keyword using the operator 'LIKE'.
 	$sql="SELECT * FROM servicos WHERE servico LIKE '".$servico."%'";
 	$result=mysqli_query($conn, $sql);
 	
@@ -28,6 +29,9 @@ include('conn.php');
 		<br>
 		<a href="cadastro.html">Voltar</a>
 	</body>
+		<div class="footer">
+  			v0.1.3 (Beta)
+  		</div>
 </html>
 
 
